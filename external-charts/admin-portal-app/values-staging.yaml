@@ -1,0 +1,7 @@
+environment: staging
+replicaCount: 2
+image:
+  tag: v0.0.1
+ingress:
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: reactapp-staging.azure.groveops.net

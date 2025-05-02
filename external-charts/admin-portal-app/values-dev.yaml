@@ -1,0 +1,7 @@
+environment: dev
+replicaCount: 1
+image:
+  tag: v0.0.1
+ingress:
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: reactapp-dev.azure.groveops.net

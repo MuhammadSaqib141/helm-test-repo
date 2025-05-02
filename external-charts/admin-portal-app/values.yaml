@@ -1,0 +1,23 @@
+replicaCount: 1
+
+image:
+  repository: pocpcprodacr1.azurecr.io/app
+  tag: v0.0.1
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: reactapp.azure.groveops.net
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  hosts:
+    - path: /
+      pathType: Prefix
+      port: 80
+
+namespace: admin-portal-app
